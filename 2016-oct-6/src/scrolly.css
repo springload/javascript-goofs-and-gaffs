@@ -1,0 +1,22 @@
+body, html {
+  height: 200%;
+}
+
+.zigzag-root {
+  position:fixed;
+  width:100%;
+}
+
+.zigzag-line {
+  font-size:100px;
+  font-family:monospace;
+  height:100px;
+  width:100%;
+  display:block;
+  text-transform:uppercase;
+  overflow:hidden;
+}
+
+.zigzag-text {
+  width:100%;
+}
