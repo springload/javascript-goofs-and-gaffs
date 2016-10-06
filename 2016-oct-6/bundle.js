@@ -21537,6 +21537,15 @@
 	            { style: { transform: "translate(" + (-40 + this.state.scrollPosition / 2) + "px, " + (-100 + this.state.scrollPosition / 2) + "px) skewX(45deg)" }, className: "zigzag-text" },
 	            this.props.children
 	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "zigzag-line", "aria-hidden": "true" },
+	          _react2.default.createElement(
+	            "div",
+	            { style: { transform: "translate(" + (240 - this.state.scrollPosition / 2) + "px, " + (-200 + this.state.scrollPosition / 2) + "px)  skewX(-45deg)" }, className: "zigzag-text" },
+	            this.props.children
+	          )
 	        )
 	      );
 	    }
