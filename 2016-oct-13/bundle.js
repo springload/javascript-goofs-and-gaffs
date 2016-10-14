@@ -108,14 +108,14 @@
 
 	      return _react2.default.createElement(
 	        'svg',
-	        { width: '160', height: '90', style: { border: "solid 1px lightgrey" }, viewBox: '0 0 160 90' },
+	        { width: '320', height: '180', style: { border: "solid 1px lightgrey" }, viewBox: '0 0 160 90' },
 	        _react2.default.createElement(
 	          'g',
 	          { transform: translateString },
 	          _react2.default.createElement('polyline', { points: [-10, -10, -10, 5, -5, 5, 0, 10, 5, 5, 10, 5, 10, -10].join(" "), strokeLinejoin: 'round', style: rotateProps, strokeWidth: '3', stroke: '#FF7D00', fill: '#FF7D00' }),
 	          _react2.default.createElement(
 	            'text',
-	            { x: '-7.9', y: '0', style: textStyle },
+	            { x: '0', y: '0', textAnchor: 'middle', style: textStyle },
 	            parseInt(this.props.percent, 10),
 	            '%'
 	          )

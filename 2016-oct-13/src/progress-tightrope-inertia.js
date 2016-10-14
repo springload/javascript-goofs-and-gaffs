@@ -18,10 +18,10 @@ export default class ProgressTightrope extends Component {
     const textStyle = this.props.textStyle || {fontFamily: 'sans-serif', fill:'white', fontSize:8, fontWeight:'bold'};
     Object.assign(textStyle, rotateProps);
 
-    return <svg width="160" height="90" style={{border: "solid 1px lightgrey"}} viewBox="0 0 160 90">
+    return <svg width="320" height="180" style={{border: "solid 1px lightgrey"}} viewBox="0 0 160 90">
       <g transform={translateString}>
         <polyline points={[-10,-10, -10,5, -5,5, 0,10, 5,5, 10,5, 10,-10 ].join(" ")} strokeLinejoin="round" style={rotateProps} strokeWidth="3" stroke="#FF7D00" fill="#FF7D00"/>
-        <text x="-7.9" y="0" style={textStyle}>{parseInt(this.props.percent, 10)}%</text>
+        <text x="0" y="0" textAnchor="middle" style={textStyle}>{parseInt(this.props.percent, 10)}%</text>
       </g>
       <polyline points={[0,45, middleX,middleY, 160,45].join(" ")} fill="none" strokeWidth="2" stroke="#F262D3"/>
     </svg>
