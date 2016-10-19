@@ -52,15 +52,17 @@
 
 	var _reactDom = __webpack_require__(34);
 
-	var _app = __webpack_require__(172);
+	var _creditcard = __webpack_require__(172);
 
-	var _app2 = _interopRequireDefault(_app);
+	var _creditcard2 = _interopRequireDefault(_creditcard);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var someMap = { alias: _app2.default }; /*jshint esnext: true */
-
-	(0, _reactDom.render)(_react2.default.createElement(someMap.alias, null), document.getElementById('container'));
+	//const someMap = {alias:App}
+	// <someMap.alias/>
+	(0, _reactDom.render)(_react2.default.createElement(_creditcard2.default, null), document.getElementById('container'));
+	// import App from './app.js';
+	/*jshint esnext: true */
 
 /***/ },
 /* 1 */
@@ -21436,36 +21438,6 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _tabContent = __webpack_require__(173);
-
-	var _tabContent2 = _interopRequireDefault(_tabContent);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = function (_ref) {
-	  var props = _ref.props;
-
-	  return _react2.default.createElement(
-	    'div',
-	    null,
-	    _react2.default.createElement(_tabContent2.default, props)
-	  );
-	};
-
-/***/ },
-/* 173 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 
@@ -21475,185 +21447,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _tabWidget = __webpack_require__(174);
-
-	var _tabWidget2 = _interopRequireDefault(_tabWidget);
-
-	var _creditcard = __webpack_require__(175);
-
-	var _creditcard2 = _interopRequireDefault(_creditcard);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var TabContent = function (_Component) {
-	    _inherits(TabContent, _Component);
-
-	    function TabContent() {
-	        _classCallCheck(this, TabContent);
-
-	        return _possibleConstructorReturn(this, (TabContent.__proto__ || Object.getPrototypeOf(TabContent)).apply(this, arguments));
-	    }
-
-	    _createClass(TabContent, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                _tabWidget2.default,
-	                null,
-	                _react2.default.createElement(
-	                    _tabWidget.Tab,
-	                    { label: 'First tab' },
-	                    'first tab content',
-	                    _react2.default.createElement(_creditcard2.default, null)
-	                ),
-	                _react2.default.createElement(
-	                    _tabWidget.Tab,
-	                    { label: 'Second tab tab' },
-	                    'second tab content'
-	                ),
-	                _react2.default.createElement(
-	                    _tabWidget.Tab,
-	                    { label: 'Third tab' },
-	                    'third tab content',
-	                    _react2.default.createElement(_creditcard2.default, null)
-	                )
-	            );
-	        }
-	    }]);
-
-	    return TabContent;
-	}(_react.Component);
-
-	exports.default = TabContent;
-
-/***/ },
-/* 174 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.Tab = undefined;
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Tabs = function (_Component) {
-	    _inherits(Tabs, _Component);
-
-	    function Tabs(props) {
-	        _classCallCheck(this, Tabs);
-
-	        var _this = _possibleConstructorReturn(this, (Tabs.__proto__ || Object.getPrototypeOf(Tabs)).call(this, props));
-
-	        _this.state = {
-	            currentTab: 0
-	        };
-	        return _this;
-	    }
-
-	    _createClass(Tabs, [{
-	        key: "render",
-	        value: function render() {
-	            var _this2 = this;
-
-	            return _react2.default.createElement(
-	                "div",
-	                null,
-	                _react2.default.createElement(
-	                    "ol",
-	                    null,
-	                    this.props.children.map(function (tab, index) {
-	                        return _react2.default.createElement(
-	                            "li",
-	                            {
-	                                onClick: _this2.changeTab.bind(_this2, index),
-	                                key: index,
-	                                className: _this2.state.currentTab === index ? "tabs-selected" : "tabs-notselected" },
-	                            tab.props.label
-	                        );
-	                    })
-	                ),
-	                this.props.children[this.state.currentTab]
-	            );
-	        }
-	    }, {
-	        key: "changeTab",
-	        value: function changeTab(index) {
-	            this.setState({
-	                currentTab: index
-	            });
-	        }
-	    }]);
-
-	    return Tabs;
-	}(_react.Component);
-
-	exports.default = Tabs;
-
-	var Tab = exports.Tab = function (_Component2) {
-	    _inherits(Tab, _Component2);
-
-	    function Tab() {
-	        _classCallCheck(this, Tab);
-
-	        return _possibleConstructorReturn(this, (Tab.__proto__ || Object.getPrototypeOf(Tab)).apply(this, arguments));
-	    }
-
-	    _createClass(Tab, [{
-	        key: "render",
-	        value: function render() {
-	            return _react2.default.createElement(
-	                "div",
-	                null,
-	                this.props.children
-	            );
-	        }
-	    }]);
-
-	    return Tab;
-	}(_react.Component);
-
-/***/ },
-/* 175 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactMaskedinput = __webpack_require__(176);
+	var _reactMaskedinput = __webpack_require__(173);
 
 	var _reactMaskedinput2 = _interopRequireDefault(_reactMaskedinput);
 
-	var _reactInlineCss = __webpack_require__(178);
+	var _reactInlineCss = __webpack_require__(175);
 
 	var _reactInlineCss2 = _interopRequireDefault(_reactInlineCss);
 
@@ -21675,6 +21473,8 @@
 
 	        _this.onChange = _this.onChange.bind(_this);
 	        _this.renderIcon = _this.renderIcon.bind(_this);
+	        _this.flip = _this.flip.bind(_this);
+	        _this.stylePrefix = "cc-style-" + Math.random().toString(36).replace(/[^0-9a-f]/g, ''); // random enough
 	        return _this;
 	    }
 
@@ -21682,30 +21482,77 @@
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
-	                _reactInlineCss2.default,
-	                { stylesheet: CREDITCARD_STYLE },
-	                this.renderIcon(),
-	                _react2.default.createElement('img', { src: 'svg/chip.svg', className: 'cc-chip' }),
-	                _react2.default.createElement(_reactMaskedinput2.default, { mask: '1111 1111 1111 1111', name: 'card', className: 'cc-text cc-number', size: '20', required: true, onChange: this.onChange }),
+	                'div',
+	                null,
 	                _react2.default.createElement(
-	                    'span',
-	                    { className: 'cc-month-year-label cc-label' },
-	                    'Month/Year'
+	                    'p',
+	                    { style: { fontSize: 'x-small' } },
+	                    'Thanks to ',
+	                    _react2.default.createElement(
+	                        'a',
+	                        { href: 'http://package.elm-lang.org/packages/abadi199/elm-creditcard/latest' },
+	                        'Elm Credit Card'
+	                    ),
+	                    ' for the SVG images!'
 	                ),
-	                _react2.default.createElement(_reactMaskedinput2.default, { mask: '11/11', name: 'card', className: 'cc-text2 cc-month-year', size: '20', required: true, onChange: this.onChange })
+	                _react2.default.createElement(
+	                    _reactInlineCss2.default,
+	                    { stylesheet: CREDITCARD_STYLE, namespace: this.stylePrefix, className: this.state && this.state.flip ? "cc-show-back" : "cc-show-front" },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'cc-card cc-front' },
+	                        this.renderIcon(),
+	                        _react2.default.createElement('img', { src: 'svg/chip.svg', className: 'cc-chip' }),
+	                        _react2.default.createElement(_reactMaskedinput2.default, { mask: '1111 1111 1111 1111', name: 'card', className: 'cc-text cc-number', size: '20', required: true, onChange: this.onChange }),
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'cc-month-year-label cc-label' },
+	                            'Month/Year'
+	                        ),
+	                        _react2.default.createElement(_reactMaskedinput2.default, { mask: '11/11', name: 'month-year', className: 'cc-text2 cc-month-year', size: '20', required: true, onChange: this.onChange })
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'cc-card cc-back' },
+	                        _react2.default.createElement('div', { className: 'cc-blackstrip' }),
+	                        _react2.default.createElement('div', { className: 'cc-whitestrip' }),
+	                        _react2.default.createElement(
+	                            'label',
+	                            { className: 'cc-cvv-label cc-label' },
+	                            _react2.default.createElement(
+	                                'abbr',
+	                                { title: 'Card Verification Value' },
+	                                'CVV:'
+	                            )
+	                        ),
+	                        _react2.default.createElement(_reactMaskedinput2.default, { mask: '111', name: 'cvv', className: 'cc-cvv', size: '20', required: true, onChange: this.onChange })
+	                    ),
+	                    _react2.default.createElement(
+	                        'button',
+	                        { onClick: this.flip, className: 'cc-next' },
+	                        'Next'
+	                    )
+	                )
 	            );
+	        }
+	    }, {
+	        key: 'flip',
+	        value: function flip() {
+	            this.setState({
+	                flip: this.state ? !this.state.flip : true
+	            });
 	        }
 	    }, {
 	        key: 'renderIcon',
 	        value: function renderIcon() {
-	            if (!this.state.card) return null;
+	            if (!this.state || !this.state.card) return null;
 
-	            console.log(this.state);
+	            var cardNumber = this.state.card.replace(/[^0-9]/g, '');
 
-	            if (this.state.card.match(VISA_REGEX)) {
-	                return _react2.default.createElement('img', { src: 'svg/visa.svg', className: 'cc-icon' });
-	            } else if (this.state.card.match(MASTERCARD_REGEX)) {
-	                return _react2.default.createElement('img', { src: 'svg/mastercard.svg', className: 'cc-icon' });
+	            if (cardNumber.match(VISA_REGEX)) {
+	                return _react2.default.createElement('img', { src: 'svg/visa.svg', className: 'cc-brand' });
+	            } else if (cardNumber.match(MASTERCARD_REGEX)) {
+	                return _react2.default.createElement('img', { src: 'svg/mastercard.svg', className: 'cc-brand' });
 	            }
 	            return null;
 	        }
@@ -21724,14 +21571,14 @@
 	exports.default = CreditCard;
 
 
-	var CREDITCARD_STYLE = '\n    @font-face {\n      font-family: \'SourceCodePro\';\n      src: url(\'SourceCodePro-BoldIt.otf.woff2\');\n    }\n\n    & {\n        background-image: linear-gradient(to left, #3a7bd5 , #3a6073);\n        background-repeat: no-repeat;\n        background-size: 100%;\n        padding: 1em;\n        width: 320px;\n        height: 170px;\n        box-sizing: border-box;\n        border-radius: 6px;\n        position:relative;\n    }\n\n    & .cc-text {\n        background: none;\n        font-size:inherit;\n        font-family: SourceCodePro, monospace;\n        color: #369;\n        border: none;\n        outline:none;\n        text-shadow: -1px -1px 1px white, 1px 1px 1px black;\n        padding: 0.5em;\n        transition: all .2s;\n    }\n\n        & .cc-text:invalid {\n            background: none;\n        }\n\n        & .cc-text:focus {\n            background-color: rgba(255,255,255,0.8);\n            color: black;\n            text-shadow: none;\n        }\n\n        & .cc-text::-webkit-input-placeholder {\n            color: white;\n            text-shadow: none;\n        }\n\n        & .cc-text::-moz-placeholder {\n            color: white;\n            text-shadow: none;\n        }\n\n    & .cc-text2 {\n        background: none;\n        font-size:inherit;\n        font-family: SourceCodePro, monospace;\n        color: #369;\n        border: none;\n        outline:none;\n        text-shadow: -1px -1px 0.25px white, 1px 1px 0.25px black;\n        padding: 0.5em;\n        transition: all .2s;\n    }\n\n        & .cc-text2:invalid {\n            background: none;\n        }\n\n        & .cc-text2:focus {\n            background-color: rgba(255,255,255,0.8);\n            color: black;\n            text-shadow: none;\n        }\n\n        & .cc-text2::-webkit-input-placeholder {\n            color: white;\n            text-shadow: none;\n        }\n\n        & .cc-text2::-moz-placeholder {\n            color: white;\n            text-shadow: none;\n        }\n\n    & .cc-number {\n        font-size:23px;\n        position:absolute;\n        top:70px;\n        left:15px;\n        width: 260px;\n    }\n\n    & .cc-chip {\n        position:absolute;\n        width: 30px;\n        top: 50px;\n        left: 30px;\n    }\n\n    & .cc-month-year-label {\n        position:absolute;\n        left: 235px;\n        top: 124px;\n        font-size: 10px;\n    }\n\n    & .cc-month-year {\n        position:absolute;\n        top: 130px;\n        left: 250px;\n        width: 40px;\n        font-size: 12px;\n    }\n\n    & .cc-label {\n        color: white;\n        font-family: SourceCodePro, monospace;\n    }\n';
+	var CREDITCARD_STYLE = '\n    @font-face {\n      font-family: \'SourceCodePro\';\n      src: url(\'SourceCodePro-BoldIt.otf.woff2\');\n    }\n\n    &,\n    & * {\n        box-sizing: border-box;\n    }\n\n    & {\n        perspective: 500;\n        -webkit-perspective: 500;\n        -moz-perspective: 500;\n        margin: 0 auto;\n        width:320px;\n    }\n\n    & > .cc-card {\n        position:absolute;\n        background-image: linear-gradient(to left, #3a7bd5 , #3a6073);\n        background-repeat: no-repeat;\n        background-size: 100%;\n        padding: 1em;\n        width: 320px;\n        height: 170px;\n        box-sizing: border-box;\n        border-radius: 6px;\n        transform-style: preserve-3d;\n        transform-origin: 50% 50%;\n        transition: all 2s;\n    }\n\n    &.cc-show-front > .cc-front {\n        transform: rotateY(0deg);\n        z-index:2;\n    }\n\n    &.cc-show-front > .cc-back {\n        transform: rotateY(180deg);\n        z-index:1;\n    }\n\n\n    &.cc-show-back > .cc-front {\n        transform: rotateY(180deg);\n        z-index:1;\n    }\n\n    &.cc-show-back > .cc-back {\n        transform: rotateY(360deg);\n        z-index:2;\n    }\n\n    & .cc-next {\n        position:absolute;\n        right: 0px;\n        top: 180px;\n        background: #369;\n        color: #fff;\n        border: none;\n        padding: 0.5em 1em;\n        border-radius: 4px;\n        cursor:pointer;\n    }\n\n\n    & .cc-text {\n        background: none;\n        font-size:inherit;\n        font-family: SourceCodePro, monospace;\n        color: #369;\n        border: none;\n        outline:none;\n        text-shadow: -1px -1px 1px white, 1px 1px 1px black, -1px -1px 2px white, 1px 1px 2px black;\n        padding: 0.1em;\n        box-sizing: border-box;\n        transition: all .2s;\n    }\n\n        & .cc-text:invalid {\n            background: none;\n        }\n\n        & .cc-text:focus {\n            background-color: rgba(255,255,255,0.8);\n            color: black;\n            text-shadow: none;\n        }\n\n        & .cc-text::-webkit-input-placeholder {\n            color: white;\n            text-shadow: none;\n        }\n\n        & .cc-text::-moz-placeholder {\n            color: white;\n            text-shadow: none;\n        }\n\n    & .cc-text2 {\n        background: none;\n        font-size:inherit;\n        font-family: SourceCodePro, monospace;\n        color: #369;\n        border: none;\n        outline:none;\n        text-shadow: -1px -1px 0.25px white, 1px 1px 0.25px black;\n        padding: 0.5em;\n        transition: all .2s;\n    }\n\n        & .cc-text2:invalid {\n            background: none;\n        }\n\n        & .cc-text2:focus {\n            background-color: rgba(255,255,255,0.8);\n            color: black;\n            text-shadow: none;\n        }\n\n        & .cc-text2::-webkit-input-placeholder {\n            color: white;\n            text-shadow: none;\n        }\n\n        & .cc-text2::-moz-placeholder {\n            color: white;\n            text-shadow: none;\n        }\n\n    & .cc-number {\n        font-size:23px;\n        position:absolute;\n        top:80px;\n        left:25px;\n        width: 265px;\n    }\n\n    & .cc-chip {\n        position:absolute;\n        width: 30px;\n        top: 50px;\n        left: 30px;\n    }\n\n    & .cc-month-year-label {\n        position:absolute;\n        left: 235px;\n        top: 124px;\n        font-size: 10px;\n    }\n\n    & .cc-month-year {\n        position:absolute;\n        top: 130px;\n        left: 250px;\n        width: 50px;\n        font-size: 12px;\n    }\n\n    & .cc-label {\n        color: white;\n        font-family: SourceCodePro, monospace;\n    }\n\n    & .cc-brand {\n        position: absolute;\n        left: 250px;\n        width: 40px;\n        background: rgba(255,255,255,0.9);\n        border-radius: 5px;\n        padding: 5px;\n    }\n\n    & .cc-blackstrip {\n        position:absolute;\n        top: 30px;\n        left: 0px;\n        height: 30px;\n        width:100%;\n        background:black;\n    }\n\n    & .cc-whitestrip {\n        position:absolute;\n        top: 70px;\n        left: 20px;\n        height: 30px;\n        width:80%;\n        background:white;\n    }\n\n    & .cc-cvv-label {\n        position:absolute;\n        left: 200px;\n        top: 75px;\n        color:black;\n    }\n\n    & .cc-cvv {\n        position:absolute;\n        left: 235px;\n        outline:none;\n        top: 73px;\n        width:40px;\n        border:none;\n        padding:5px;\n    }\n';
 
-	var VISA_REGEX = /^4[0-9]{12}(?:[0-9]{3})?$/;
+	var VISA_REGEX = /^4/;
 
-	var MASTERCARD_REGEX = /^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$/;
+	var MASTERCARD_REGEX = /^5/;
 
 /***/ },
-/* 176 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21747,7 +21594,7 @@
 	var getSelection = _require.getSelection;
 	var setSelection = _require.setSelection;
 
-	var InputMask = __webpack_require__(177);
+	var InputMask = __webpack_require__(174);
 
 	var KEYCODE_Z = 90;
 	var KEYCODE_Y = 89;
@@ -21978,7 +21825,7 @@
 	module.exports = MaskedInput;
 
 /***/ },
-/* 177 */
+/* 174 */
 /***/ function(module, exports) {
 
 	'use strict'
@@ -22501,7 +22348,7 @@
 
 
 /***/ },
-/* 178 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
