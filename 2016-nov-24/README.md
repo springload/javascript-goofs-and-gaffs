@@ -4,9 +4,10 @@ Regular math in JavaScript and many other languages has tiny errors. `0.1 + 0.2`
 
 So,
 
-    0.1 + 0.2 !== 0.3;
+    > 0.1 + 0.2 === 0.3;
+    false
 
-Usually these errors don't matter but if you're handling money then you'll want accurate math which is called Decimal Math, or Decimal Arithmatic.
+Usually these errors don't matter but if you're handling money then you'll probably want accurate math which is called Decimal Math, or Decimal Arithmatic.
 
 There are many libraries for this and they typically handle numbers as strings. So you use '0.1' rather than 0.1, and '0.2' rather than 0.2, etc.
 
