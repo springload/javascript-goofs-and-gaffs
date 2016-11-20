@@ -1,0 +1,36 @@
+{
+  "name": "callbacks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack && cp ./src/index.html ./dist/",
+    "devweb": "cp ./src/index.html ./dist/ && ./node_modules/.bin/webpack-dev-server --content-base ./dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holloway/callbacks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/holloway/callbacks/issues"
+  },
+  "homepage": "https://github.com/holloway/callbacks#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-plugin-transform-regenerator": "^6.16.1",
+    "babel-preset-latest": "^6.16.0",
+    "co": "^4.6.0",
+    "co-spawn": "0.0.1",
+    "superagent": "^2.3.0",
+    "superagent-promise": "^1.1.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.16.0",
+    "babel-runtime": "^6.18.0"
+  }
+}
