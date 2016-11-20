@@ -1,6 +1,6 @@
-= Math in JavaScript =
+# Math in JavaScript
 
-Regular math in JavaScript has tiny errors. `0.1 + 0.2` will result in `0.30000000000000004`.
+Regular math in JavaScript and many other languages has tiny errors. `0.1 + 0.2` will result in `0.30000000000000004`.
 
 So,
 
@@ -23,3 +23,7 @@ And you can use it to do comparisons too...
 These are calls to `Big.js` that are processed from left-to-right (chained functions), but remember back in school there was [BEDMAS or BODMAS](https://en.wikipedia.org/wiki/Order_of_operations) which said you have to do division before addition, or something like that. But because `Big.js` is processed left-to-right you need to remember to do things in the correct order.
 
 An alternative (which is probably slightly less efficient) is a thing called Math.js which has an `math.eval('0.1 + 0.2 / 0.5')` which will remember BODMAS for you.
+
+------------------------------------
+
+The techy reasoning behind these slight math inaccuracies is that it's faster for the CPU to do binary math. This approach was standardised in IEEE 754 which many popular languages use (JavaScript, Python).
