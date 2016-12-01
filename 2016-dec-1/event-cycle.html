@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<table>
+		<tbody>
+			<tr>
+				<td id="shadyLane">Shady Grove</td>
+				<td>Aeolian</td>
+			</tr>
+			<tr>
+				<td>Over the river, Charlie</td>
+				<td>Dorian</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+<script>
+const tbody = document.querySelector("tbody");
+tbody.addEventListener('click', function(ev){
+
+})
+const shadyLane = document.querySelector("#shadyLane");
+shadyLane.addEventListener('click', function(ev){
+	ev.stopPropagation();
+})
+</script>
+</html>

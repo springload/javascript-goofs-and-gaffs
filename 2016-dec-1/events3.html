@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<title>Browser Events</title>
+	<style> .event { background: #eee; outline: 1px solid #ccc; padding: 5px; color: #555} p { border: solid 500px white; }	</style>
+<body>
+
+	<div class="outer">
+		 some words
+		 <button>Click</button>
+		 more words
+	 </div>
+
+</body>
+<script>
+
+const button = document.querySelector('button');
+
+const outer = document.querySelector('.outer');
+
+function buttonClick(ev){
+	console.log('button click!');
+}
+
+function outerClick(ev){
+	console.log('outer click!');
+}
+
+button.addEventListener('click', buttonClick, false);
+
+outer.addEventListener('click', outerClick, false);
+
+
+</script>
+</html>

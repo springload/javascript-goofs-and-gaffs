@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Events</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+			<style>
+
+			.reveal .event,
+			.event {
+				background: #666;
+				color: #fff;
+				outline: 1px solid #ccc;
+				display: inline-block;
+				padding: 0.2em 0.5em;
+				font-size:20px;
+			}
+
+			h1,
+			.reveal h1,
+			h2,
+			.reveal h2,
+			h3,
+			.reveal h3 {
+				text-transform: none;
+			}
+
+			.reveal code,
+			.code {
+				text-transform: none;
+			}
+
+			.reveal h3,
+			.reveal img,
+			h3 {
+				vertical-align: middle;
+				font-size:20px;
+			}
+
+			.reveal img,
+			.reveal section img  {
+				border:none;
+				background:none;
+				box-shadow:none
+			}
+			</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Events</h1>
+					<p>clicking, scrolling, stuff like that</p>
+				</section>
+
+				<section>
+					<h3><code>thing.addEventListener(type, callback, <strike>useCapture</strike>);</code></h3>
+				</section>
+
+				<section>
+					<p>Browser Events: Click, Scroll, <a href="https://developer.mozilla.org/en-US/docs/Web/Events">and more</a></p>
+					<p>Fake Events: React, Hammer.js, etc</p>
+				</section>
+
+				<section>
+					<a href="events.html">example #1</a>
+				</section>
+
+
+				<section>
+					<h1>The Problem</h1>
+					<h2>Clicks inside Clicks</h2>
+					<p><img src="nested-clicks.png"></p>
+				</section>
+
+				<section>
+					<h1><i>A</i> Solution</h1>
+					<h2><code>useCapture</code></h2>
+				</section>
+
+				<section>
+					<h3>Event Cycle</h3>
+					<p><a href="event-cycle.html"><img src="bubbling.png"></a></p>
+				</section>
+
+				<section>
+					<a href="events2.html">example #2</a>
+					<a href="http://codepen.io/chriscoyier/pen/vOZNQV">throttle vs debounce</a>
+				</section>
+
+				<section>
+					<h1>A Tenuous Networking Analogy</h1>
+					<h3><img src="computer.svg"> &rarr; <span class="event">Prev Song</span> &rarr; <img src="computer.svg"></h3>
+				</section>
+
+				<section>
+					<h1>Every Event Matters</h1>
+					<h3><img src="computer.svg"> &rarr; <span class="event">Prev Song</span> &rarr; <img src="computer.svg"></h3>
+					<h3><img src="computer.svg"> &rarr; <span class="event">Prev Song</span> &rarr; <img src="computer.svg"></h3>
+					<h3><img src="computer.svg"> &rarr; <span class="event">Prev Song</span> &rarr; <img src="computer.svg"></h3>
+					<h3><img src="computer.svg"> &rarr; <span class="event">Prev Song</span> &rarr; <img src="computer.svg"></h3>
+				</section>
+
+				<section>
+					<h1><i>Not Every</i> Event Matters</h1>
+					<h3><img src="computer.svg"> &rarr; <span class="event">Play Song #234</span> &rarr; <img src="computer.svg"></h3>
+					<h3><img src="computer.svg"> &rarr; <span class="event">Play Song #230</span> &rarr; <img src="computer.svg"></h3>
+					<h3><img src="computer.svg"> &rarr; <span class="event">Play Song #240</span> &rarr; <img src="computer.svg"></h3>
+					<h3><img src="computer.svg"> &rarr; <span class="event">Play Song #245</span> &rarr; <img src="computer.svg"></h3>
+				</section>
+
+				<section>
+					<h1>The End</h1>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

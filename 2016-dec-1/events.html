@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<title>Browser Events</title>
+	<style> .event { background: #eee; outline: 1px solid #ccc; padding: 5px; color: #555} p { border: solid 500px white; font-size:xx-large }	</style>
+<body>
+
+	<button>Click</button>
+
+	<p>more</p> <p>words</p> <p>make</p> <p>tall</p> <p>pages</p>
+
+</body>
+<script>
+
+const button = document.querySelector('button');
+
+function eventFired(ev){
+	console.log(ev.type, ev);
+}
+
+button.addEventListener('buh', eventFired);
+
+const myRealBuhEvent = new Event('buh');
+
+button.dispatchEvent(myRealBuhEvent);
+
+
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<title>Browser Events</title>
+	<style> .event { background: #eee; outline: 1px solid #ccc; padding: 5px; color: #555} p { border: solid 400px white; font-size: xx-large }	</style>
+<body>
+
+	<p>more</p> <p>words</p> <p>make</p> <p>tall</p> <p>pages</p>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.2/lodash.min.js"></script>
+<script>
+
+function eventFired(ev){
+	const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+	console.log(ev.type, scrollPosition);
+}
+
+const throttledEventFired = _.throttle(eventFired, 100);
+
+window.addEventListener('scroll', throttledEventFired);
+
+</script>
+</html>
