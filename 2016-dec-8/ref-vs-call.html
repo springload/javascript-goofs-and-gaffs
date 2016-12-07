@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+"use strict";
+
+function consoleLog(message){
+    console.log(message)
+}
+
+consoleLog('rtype');
+
+function wrapper(fn, message){
+    fn(message);
+}
+
+wrapper(consoleLog, 'amiga');
+
+</script>
+</body>
+</html>

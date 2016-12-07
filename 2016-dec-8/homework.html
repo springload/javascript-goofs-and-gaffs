@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<table border="4" cellspacing="3">
+    <tr>
+        <td>the TD</td>
+    </tr>
+</table>
+
+<script>
+const captureDocument = (ev) => {
+                                console.log('Capture Document');
+                                ev.stopPropagation();
+                                };
+const captureTr =       (ev) => { console.log('Capture TR'); };
+const captureTd =       (ev) => { console.log('Capture TD'); };
+const bubbleTd =        (ev) => { console.log('Bubble TD'); };
+const bubbleTr =        (ev) => { console.log('Bubble TR'); };
+const bubbleDocument =  (ev) => { console.log('Bubble Document'); };
+
+const td = document.querySelector('td');
+const tr = document.querySelector('tr');
+
+document.addEventListener('click', captureDocument, true);
+tr      .addEventListener('click', captureTr,       true);
+td      .addEventListener('click', captureTd,       true);
+td      .addEventListener('click', bubbleTd,        false);
+tr      .addEventListener('click', bubbleTr,        false);
+document.addEventListener('click', bubbleDocument,  false);
+
+</script>
+</body>
+</html>

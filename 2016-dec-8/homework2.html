@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p> some content </p>
+
+<script>
+const captureDocument1 = (ev) => {
+                                console.log('Capture Document 1');
+                                ev.stopPropagation();
+                                };
+const captureDocument2 = (ev) => {
+                                console.log('Capture Document 2');
+                                // ev.stopPropagation();
+                                };
+
+const paragraphClick = (ev) => {
+                                console.log('Paragraph click');
+                                }
+
+document.addEventListener('click', captureDocument1, true);
+document.addEventListener('click', captureDocument2, true);
+
+document.querySelector('p').addEventListener('click', paragraphClick, true);
+
+</script>
+</body>
+</html>

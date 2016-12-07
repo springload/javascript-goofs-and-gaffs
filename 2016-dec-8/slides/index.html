@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Events</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+			<style>
+
+			.reveal .event,
+			.event {
+				background: #666;
+				color: #fff;
+				outline: 1px solid #ccc;
+				display: inline-block;
+				padding: 0.2em 0.5em;
+				font-size:20px;
+			}
+
+			h1,
+			.reveal h1,
+			h2,
+			.reveal h2,
+			h3,
+			.reveal h3 {
+				text-transform: none;
+			}
+
+			.reveal code,
+			.code {
+				text-transform: none;
+			}
+
+			.reveal h3,
+			.reveal img,
+			h3 {
+				vertical-align: middle;
+				font-size:20px;
+			}
+
+			.reveal img,
+			.reveal section img  {
+				border:none;
+				background:none;
+				box-shadow:none
+			}
+			</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Functions</h1>
+					<p> .bind / .call / .apply etc.</p>
+				</section>
+
+				<section>
+					<h3>But first... my homework</h3>
+					<img src="bubbling.png">
+				</section>
+
+				<section>
+					<p><a href="../homework.html">Homework #1</a></p>
+					<p><a href="../homework2.html">Homework #2</a></p>
+				</section>
+
+				<section>
+					<h1>Back to Functions</h1>
+					<p>References vs Calling</h1>
+					<p><a href="../ref-vs-call.html">Demo</a></p>
+				</section>
+
+				<section>
+					<h1>Functions</h1>
+					<p><code>this</code> aka <code>that</code> aka <code>context</code> aka <code>self</code> </p>
+					<p><a href="../index.html">Live Coding</a></p>
+				</section>
+
+				<section>
+					<h1>Functions</h1>
+					<p>.call</p>
+					<p>.bind</p>
+					<p>.apply</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

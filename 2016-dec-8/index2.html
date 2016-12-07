@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="container"></div>
+
+<script>
+
+"use strict";
+
+function format(name){
+    const title = this && this.title ? this.title : '';
+    return title + ' ' + name + '<hr/>';
+}
+
+class PersonTitle {
+    constructor (title) {
+        this.title = title;
+        this.getTitle.call(this);
+        this.onClick = this.onClick.bind(this);
+        this.items = [3,6,9]
+    }
+    render() {
+        return <div>
+          {this.items.map(item => <button onClick={this.onClick.bind(null, item)}>{item}</button> )}
+        </div>
+        return <button onClick={this.onClick}>click</button>
+    }
+    onClick3(ev){
+
+    }
+    onClick6(ev){
+
+    }
+
+    onClick9(ev){
+
+    }
+
+}
+
+function
+
+
+const doctor = new PersonTitle('doctor');
+
+const container = document.querySelector('#container');
+
+container.innerHTML += format.call(doctor, "matt")
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="container"></div>
+
+<script>
+
+"use strict";
+
+function format(name){
+    const prefix = this ? this : '';
+    return prefix + name + '<hr/>';
+}
+
+const container = document.querySelector('#container');
+
+container.innerHTML += format.call('sir', 'matt');
+
+</script>
+</body>
+</html>
