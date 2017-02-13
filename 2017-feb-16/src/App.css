@@ -1,0 +1,54 @@
+.base {
+  margin: 0 auto;
+  background: #efefef;
+  padding: 1em;
+  width:;
+}
+
+.base table {
+  border-collapse: collapse;
+  border: solid 1px #ccc;
+  margin: 0px;
+  margin: 0 auto;
+}
+
+.base caption {
+  font-size:small;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.base th {
+  border-bottom: solid 1px #ccc;
+  background: #eee;
+  min-width: 3em;
+  line-height:1.1;
+  padding: 3px;
+}
+
+.base th,
+.base td {
+  border-right: solid 1px #ccc;
+  text-align:center;
+}
+
+.base-header-label {
+  text-transform: uppercase;
+  font-size: xx-small;
+  display:block;
+  color: #666;
+}
+
+.base-button {
+  background: white;
+  border: 1px inset #ccc;
+  color: #666;
+  margin: 0.5em 0.5em 0.3em 0px;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.base-button:hover,
+.base-button:focus {
+  background: #fef;
+}

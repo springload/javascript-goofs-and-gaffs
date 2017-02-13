@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>(Create) React (App) </title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+			<style>
+
+
+			h1,
+			.reveal h1,
+			h2,
+			.reveal h2,
+			h3,
+			.reveal h3 {
+				text-transform: none;
+			}
+
+			.reveal code,
+			.code {
+				text-transform: none;
+			}
+
+			.reveal h3,
+			.reveal img,
+			h3 {
+				vertical-align: middle;
+				font-size:20px;
+			}
+
+			.reveal img,
+			.reveal section img  {
+				border:none;
+				background:none;
+				box-shadow:none
+			}
+
+			.reveal,
+			.reveal p,
+			.reveal h1,
+			.reveal h2,
+			.reveal h3 {
+				text-shadow: 0px 0px 5px black;
+				text-shadow:  0px 0px 8px black, 0px 0px 4px black, 0px 0px 2px black;
+				font-weight:bold;
+			}
+
+			</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="mr-computer.jpg">
+
+				</section>
+
+				<section data-background="tty.jpg">
+					<h1><i>Create</i>-React-<i>App</i></h1>
+					<p><code> npm install -g create-react-app </code> </p>
+					<p><i>and wait...</i></p>
+				</section>
+
+				<section data-background="http://i.imgur.com/w74bwma.jpg">
+					<p><code>cd ~/Development/</code>
+					<p><code>create-react-app workshop</code>
+					<p><code>cd workshop</code>
+					<p><code>npm start</code>
+				</section>
+
+				<section data-background="https://i.imgur.com/v2dItHF.jpg">
+					<h1 style="position:absolute;left:15%;top:0%;transform:skewX(-15deg);font-size:150px;color:#ccc;opacity:0.7">JSX</h1>
+					<p style="position:absolute;left:10%;transform:skewX(-15deg);top:15%;opacity:0.4"><br><a href="https://babeljs.io/repl">Babel Repl</a></p>
+				</section>
+
+				<section data-background="https://66.media.tumblr.com/ad5f76250e04fbb865e87ebf0a079624/tumblr_oche3sWEKQ1tdhimpo1_540.gif">
+						<h1>Components</h1>
+				</section>
+
+				<section data-background="https://i.imgur.com/B3LVSAu.jpg">
+					<h1>Plan Your Components</h1>
+					<p>Let's make a news reader</p>
+				</section>
+
+				<section data-background="https://i.imgur.com/XSSQlEM.jpg" data-background-size="contain">
+					<h1>Static vs. Dynamic</h1>
+					<p>Google "RSS2JSON"</p>
+				</section>
+
+				<section data-background="https://i.imgur.com/degw6RU.jpg">
+					<h1>Lifecycle</h1>
+				</section>
+
+				<section>
+					<h1>That's it (bye)</h1>
+
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
