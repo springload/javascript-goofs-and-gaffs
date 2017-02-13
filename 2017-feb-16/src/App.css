@@ -52,3 +52,10 @@
 .base-button:focus {
   background: #fef;
 }
+
+.base .base-equals {
+  padding: 0px 0px 0px 5px;
+  margin: 0px;
+  border-top: double #bbb 3px;
+  font-size: x-small;
+}

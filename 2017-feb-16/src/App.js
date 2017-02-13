@@ -42,11 +42,14 @@ class App extends Component {
                 return <td key={index}>{formatBaseCell(part)}</td>
               })}
             </tr>
+            { base !== 10 ? <tr><td colSpan={numberInBaseParts.length + 1} className="base-equals">...is <b>{number}</b> in Base 10</td></tr> : null }
           </tbody>
         </table>
         <button onClick={this.addOne} className="base-button">Add</button>
         <button onClick={this.subtractOne} className="base-button">Subtract</button>
+
       </div>
+
     );
   }
 
