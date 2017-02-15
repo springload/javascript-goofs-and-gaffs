@@ -36,11 +36,10 @@
 
       tracking.track('#video', tracker, { camera: true });
 
-      setInterval( () => {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-      }, 1000);
-
       tracker.on('track', function(event) {
+        if(event.data && event.data.length > 0) {
+          context.clearRect(0, 0, canvas.width, canvas.height);
+        }
         event.data.forEach(function(rect) {
           context.drawImage(zombie, rect.x, rect.y, rect.width, rect.height);
         });
