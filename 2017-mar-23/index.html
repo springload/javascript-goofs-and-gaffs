@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Project Layout and Redux Saga</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<style>
+			.reveal h1 {
+				text-shadow: 0px 0px 5px black;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-video="https://giant.gfycat.com/MeaslyFrightenedCrab.mp4" data-background-video-loop="true">
+					<h1>Project Structure</h1>
+				</section>
+
+				<section>
+					<p>/Naming-Things &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+					<p>└── Grouping</p>
+				</section>
+				<section>
+<h3>Design > No Design</h3>
+<pre style="width:15em">
+Downloads/
+  23sdfsdf.bas
+  23sfsf~2
+  23sfsf-2.bas
+  23sfsf~2.bas
+  23sfsf-2
+  23sfsf_2.bas
+  23sfsf__2.bas
+  i-am-a.qt
+  .murder-plot-SECRET.txt
+  neil-breen-movies.txt
+</pre>
+				</section>
+				<section data-background="dates.jpg" data-background-size="contain"></section>
+				<section data-background="https://i.imgur.com/vBhMpSnm.jpg" data-background-size="contain"></section>
+				<section>
+<h3>Small Scale</h3>
+<pre style="width:12em">
+sass/
+  style.scss
+  ...
+components/
+  index.js
+  todos/
+    index.js
+    TodoItem.js
+    ...
+constants/
+  index.js
+  actionsTodos.js
+models/
+  todos.js
+api/
+  index.js
+  todos.js
+index.js
+rootReducer.js
+</pre>
+				</section>
+				<section>
+					<h2>Discuss...</h2>
+					<p>index overload</p>
+					<p>Extracting and reusing a component is hard.</p>
+					<p>Adding a section involves touching (almost) every directory.</p>
+				</section>
+				<section>
+					<h3>Medium Scale</h3>
+<pre style="width:18em;font-size:6px">
+actions/
+	todos.js
+	articles.js
+	projects.js
+	snaffle.js
+	area-chart.js
+	headlines.js
+	snozberries.js
+	history.js
+	wiki.js
+	popover.js
+	portfolioCard.js
+	portfolioChart.js
+	portfolioDetails.js
+	portfolioLegend.js
+	portfolioSnippet.js
+	portfolioTable.js
+components/
+	todos/
+		TodoItem.js
+		...
+	articles/
+		Article.js
+	Projects.js
+	Headlines.js
+	Snaffle.js
+	Snozberries/
+		SnozBerry.js
+	history.js
+	Wiki.js
+	Area-chart.js
+	popover.js
+	Portfolio/
+		Card.js
+		Chart.js
+		Details.js
+		Legend.js
+		Snippet.js
+		Table.js
+constants/
+	todos.js
+	articles.js
+	projects.js
+	snaffle.js
+	headlines.js
+	history.js
+	snozberries.js
+	wiki.js
+	area-chart.js
+	popover.js
+	portfoliocard.js
+	portfoliochart.js
+	portfoliodetails.js
+	portfoliolegend.js
+	portfoliosnippet.js
+	portfoliotable.js
+reducers/
+	todos.js
+	articles.js
+	projects.js
+	snaffle.js
+	headlines.js
+	history.js
+	snozberries.js
+	wiki.js
+	area-chart.js
+	popover.js
+	portfoliocard.js
+	portfoliochart.js
+	portfoliodetails.js
+	portfoliolegend.js
+	portfoliosnippet.js
+	portfoliotable.js
+sass/
+  style.scss
+index.js
+rootReducer.js
+</pre>
+				</section>
+				<section data-background="https://i.imgur.com/jtGe4Xa.jpg">
+						<h1>Technology<br> orientated<br> layout</h1>
+				</section>
+				<section data-background="https://pbs.twimg.com/profile_images/800857197697703936/RMfUXdGk.jpg" data-background-size="contain">
+					<h1 style="color:black">Feature<br>orientated<br> layout</h1>
+				</section>
+				<section>
+					<h1> Ideas </h1>
+					<p>Organise from 'business logic' not technology
+					<p><tt>name.tech.lang</tt> eg. <tt>homepage.constants.js</tt>
+					<p>7+ items put in a subdirectory (maybe)
+					<p>no index.js (maybe)
+				</section>
+				<section>
+<pre style="width:12em;font-size:7px">
+AppRoot
+	Articles.component.js
+	Todos/
+		Todos.component.js
+		Todos.reducer.js
+		Todos.api.js
+		Todos.scss
+		TodoItem.component.js
+	Projects/
+		Projects.component.js
+		Projects.scss
+	Portfolio/
+		PortfolioHomePage.component.js
+		PortfolioCard/
+			PortfolioCard.component.js
+			PortfolioCard.constants.js
+			PortfolioCard.actions.js
+			PortfolioCard.scss
+		PortfolioChart/
+			PortfolioChart.component.js
+			PortfolioChart.constants.js
+			PortfolioChart.actions.js
+		PortfolioDetails/
+			PortfolioDetails.component.js
+			PortfolioDetails.constants.js
+			PortfolioDetails.actions.js
+		PortfolioLegend/
+			PortfolioLegend.component.js
+			PortfolioLegend.constants.js
+			PortfolioLegend.actions.js
+		PortfolioSnippet/
+			PortfolioSnippet.component.js
+			PortfolioSnippet.constants.js
+			PortfolioSnippet.actions.js
+		PortfolioTable
+			PortfolioTable.component.js
+			PortfolioTable.constants.js
+			PortfolioTable.actions.js
+			PortfolioTable.scss
+	Projects/
+		Projects.components.js
+		Projects.constants.js
+	Headlines.components.js
+	History/
+		History.components.js
+		History.constants.js
+		History.scss
+	Snaffle.component.js
+	Snozberries/
+		Snozberriess.component.js
+		Snozberriess.constants.js
+		Snozberriess.reducers.js
+		Snozberriess.svg
+		Snozberry/
+			SnozBerry.component.js
+			SnozBerry.constants.js
+			SnozBerry.svg
+	Wiki/
+		Wiki.components.js
+		Wiki.constants.js
+Common/
+	Area-Chart/
+		Area-Chart.components.js
+		Area-Chart.constants.js
+		Area-Chart.scss
+	Popover/
+		Popover.component.js
+		Popover.constants.js
+		Popover.reducers.js
+index.js <b>&larr;--- ARGH but just one</b>
+rootReducer.js
+</pre>
+				</section>
+				<section>Demo</section>
+				<section data-background="https://pbs.twimg.com/media/C6roF75VoAADDIl.jpg:large" data-background-size="contain"></section>
+				<section>
+					<h1>Redux Saga</h1>
+				</section>
+				<section>
+<pre>
+const reducer = (previousState = {time: Date.now() }, action) => {
+	switch(action.type){
+	case 'GET_TIME':
+		return {
+			time: Date.now(),
+		};
+	}
+	default:
+		return { ...previousState };
+}
+</pre>
+				</section>
+				<section>
+<pre>
+store.dispatch({ type: 'GET_TIME' });
+
+const storeState = store.getState();
+console.log(storeState.time);
+</pre>
+				</section>
+
+				<section data-background="https://i.imgur.com/PdiuUqc.jpg" data-background-size="contain"></section>
+				<section data-background="https://i.imgur.com/h7L7d2A.jpg" data-background-size="contain"></section>
+				<section data-background="https://68.media.tumblr.com/dc6243ff173d168386c60d8f1f285a08/tumblr_on101wYdp01qep5zro1_540.jpg" data-background-size="contain"></section>
+				<section data-background="https://i.imgur.com/JAwnNZHh.png" data-background-size="contain"></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
