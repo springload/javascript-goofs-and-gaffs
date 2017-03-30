@@ -1,0 +1,7 @@
+[include]
+./src
+
+[options]
+emoji=true
+server.max_workers=2
+

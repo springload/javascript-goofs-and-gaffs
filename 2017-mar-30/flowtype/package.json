@@ -1,0 +1,12 @@
+{
+  "name": "flowtype",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "flow-bin": "^0.42.0"
+  },
+  "dependencies": {
+    "flow-typed": "^2.0.0"
+  }
+}
