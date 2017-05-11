@@ -69,7 +69,7 @@ Further, it seems that React PropTypes are (unofficially for now) being replaced
 
 ## Further reading
 
-Well read the code for starters (`index.js`, `component.flowtype.js`). Note there there are some types that can't be converted.
+Well read the code for starters (`index.js`, `component.proptypes.js`, and `component.flowtype.js`). Note there there are some types that can't be converted.
 
 I like Flow but TypeScript is good too and is far more popular.
 
