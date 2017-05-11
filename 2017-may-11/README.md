@@ -2,8 +2,8 @@
 
 ## Usage
 
-    `yarn install`
-    `yarn build`
+    yarn install
+    yarn build
 
 Then open `./index.html` in your browser.
 
@@ -65,9 +65,12 @@ As applications get larger it becomes harder to invoke every possible state of a
 
 Having build-time type-checking can alert you to errors earlier.
 
-Further, it seems that PropTypes are (unofficially for now) being replaced by build-time type-checkers such as Flow Type and TypeScript.
+Further, it seems that React PropTypes are (unofficially for now) being replaced by build-time type-checkers such as FlowType and TypeScript.
 
 ## Further Reading
 
+* [FlowType](flowtype.org)
 * [React Flow](https://flow.org/en/docs/frameworks/react/) other ways of checking types in React (not just props)
 * [react-flow-types](https://www.npmjs.com/package/react-flow-types)
+
+* [TypeScript](https://www.typescriptlang.org/)
