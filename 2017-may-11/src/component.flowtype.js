@@ -16,6 +16,7 @@ type PropTypes = {
   // Flow has no inherent concept of renderable but you
   // could do something like
   node: boolean | string | number | HTMLElement | ?React$Element<any> | null,
+  // or use 3rd-party libraries like https://www.npmjs.com/package/react-flow-types
  
   // A React element.
   element: ?React$Element<any>,
