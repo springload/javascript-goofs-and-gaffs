@@ -1,0 +1,24 @@
+{
+  "name": "proptypes-to-flowtype",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.5.9",
+    "react": "16.0.0-alpha.12",
+    "react-dom": "16.0.0-alpha.12"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-flow-comments": "^6.22.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "flow-bin": "^0.46.0",
+    "flow-typed": "^2.1.2",
+    "flow-webpack-plugin": "^0.3.6",
+    "webpack": "^2.5.1"
+  },
+  "scripts": {
+    "build": "NODE_ENV=development webpack -d"
+  }
+}
