@@ -224,8 +224,7 @@ body {
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #6ca0e8;
-  text-shadow: none;
+  text-decoration: underline;
   border: none; }
 
 .reveal .roll span:after {
@@ -354,4 +353,3 @@ code,
 .twitterHandle {
   text-transform: lowercase;
 }
-

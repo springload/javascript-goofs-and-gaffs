@@ -20,6 +20,23 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style>
+			.springloadLogo {
+				position:absolute;
+				top:0px;
+				right:0px;
+				padding: .2rem .9rem;
+				background: rgba(255,255,255, 0.3);
+				border-style: dashed;
+				border-width: 2px;
+				border-color: #ccc;
+				border-radius: 2rem 0.7rem;
+			}
+
+			i {
+				text-decoration: underline;
+			}
+		</style>
 	</head>
 	<body>
 
@@ -28,12 +45,13 @@
 			<div class="slides">
 
 
-															<svg width="150" height="40" style="position:absolute;top:0px;right:0px">
+															<svg width="150" height="40" class="springloadLogo">
 																	<use xlink:href="#springload" />
 															</svg>
+
 <section>
 	<h1>PropTypes<br>
-	 <i style="color:lightpink ; font-family: 'comic sans ms' ; text-shadow:.1rem .1rem 1rem black; transform: scale(2.2); display: inline-block">2</i>
+	 <i style="color:lightpink ; text-decoration: none; font-family: 'comic sans ms' ; text-shadow:.1rem .1rem 1rem black; transform: scale(2.2); display: inline-block">2</i>
 	 <br>
 	 FlowType
 	</h1>
@@ -42,19 +60,44 @@
 	</h5>
 </section>
 
+<!-- <section data-background="wakeup.png" data-background-size="contain"></section> -->
+
+<section data-background="whoami.jpg" data-background-size="contain">
+	<div style="margin-left:40%;margin-top:20%; text-align:left">
+		<img src="netscape2.gif">
+	</div>
+</section>
+
 <section>
 		<h1>React 15.5.0</h1>
 		<p>
 			<img src="bye.png" alt="'Bye' Emoji" style="width: 10rem; vertical-align:middle; border: none; background:none; box-shadow:none">
 			<b>PropTypes</b>
-			
+
 		<br>
 			 deprecated &amp; moved to <tt>'prop-types'</tt>
 		</p>
 </section>
 
 
+<section>
+		<h1>React 15.5.0</h1>
+		<p>
+			<img src="bye.png" alt="'Bye' Emoji" style="width: 10rem; vertical-align:middle; border: none; background:none; box-shadow:none">
+			<b>PropTypes</b>
 
+		<br>
+			 deprecated &amp; moved to <tt>'prop-types'</tt>
+		</p>
+</section>
+
+<section>
+	<pre><code data-trim data-noescape>import { PropTypes } from 'react';</code></pre>
+	<pre><code data-trim data-noescape>import PropTypes from 'prop-types';</code></pre>
+  <pre style="position:absolute;width:100vw;left:-10%"><code data-trim data-noescape style="display:inline-block">jscodeshift -t react-codemod/transforms/React-PropTypes-to-prop-types.js &lt;path&gt;</code></pre>
+</section>
+
+<!-- 
 <section class="left">
 		<h6>2013 May 30<span class="numberSuffix">th</span> &nbsp; <span class="versionNumber"><abbr title="version" class="version">v</abbr>0.3.0 </span></h6>
 		<p>React released, with <tt>PropTypes</tt></p>
@@ -74,15 +117,7 @@
 	<h6>2017 ? &nbsp; <span class="versionNumber"><abbr title="version" class="version">v</abbr>16</span></h6>
 	<p><q>"PropTypes is no longer supported and will be removed completely in React 16"</q> &nbsp; <q>"createClass is no longer supported"</q></p>
 </section>
-
-
-<section>
-	<h3>PropTypes</h3>
-	<pre><code data-trim data-noescape>
-import { Component, PropTypes } from 'react';
-import PropTypes from 'prop-types';
-</code></pre>
-</section>
+-->
 
 <section style="transform: scale(1.5)">
 	<h1>a + b;</h1>
@@ -98,14 +133,41 @@ import PropTypes from 'prop-types';
 
 <section data-background-image="jigsaw.svg" data-background-size="contain"></section>
 
+<section>
+	<h1>Flow<br>
+		 <i style="color:lightpink ; text-decoration: none; font-family: 'comic sans ms' ; text-shadow:.1rem .1rem 1rem black; transform: scale(1); display: inline-block">or</i><br>
+ TypeScript</h1>
+</section>
 
 <section>
 <pre><code data-trim data-noescape>
-const divMaxX = (x) => ( Number.MAX_VALUE / x );
+class MyComp extends Component {
+  render() { return &lt;h1&gt;{this.props.title}&lt;/h1&gt;}
+}
+MyComp.propTypes = {
+  title: PropTypes.string,
+}
+</code></pre>
+</section>
 
-const getCoordinates = () => ('a');
 
-divMaxX(getCoordinates());
+<section>
+<pre><code data-trim data-noescape>
+// @flow
+class MyComp extends Component {
+  props: {
+    title: string,
+  }
+  render() { return &lt;h1&gt;{this.props.title}&lt;/h1&gt;}
+}
+</code></pre>
+</section>
+
+<section>
+<pre><code data-trim data-noescape>
+const subtract = (x: number, y: number) => ( x - y );
+
+subtract( 1, getY() );
 </code></pre>
 </section>
 
@@ -113,17 +175,8 @@ divMaxX(getCoordinates());
 	<p>String<br> Array<br> Number<br> Object<br> Function<br>...</p>
 </section>
 
-
-
-<section data-background="cover.png" data-background-size="contain" data-background-color="black"></section>
-
 <section>
 	<h1>DEMO</h1>
-</section>
-
-<section>
-	<h1>CodeMod</h1>
-	<p>(don't)</p>
 </section>
 
 <section>

@@ -3,59 +3,59 @@ import Message from './classes/message.js';
 
 const propTypes = {
   // Based on official https://github.com/reactjs/prop-types examples
-  array: PropTypes.array,
-  bool: PropTypes.bool,
-  func: PropTypes.func,
-  number: PropTypes.number,
-  object: PropTypes.object,
-  string: PropTypes.string,
-  symbol: PropTypes.symbol,
+  arrayProp: PropTypes.array,
+  boolProp: PropTypes.bool,
+  funcProp: PropTypes.func,
+  numberProp: PropTypes.number,
+  objectProp: PropTypes.object,
+  stringProp: PropTypes.string,
+  symbolProp: PropTypes.symbol,
  
   // Anything that can be rendered: numbers, strings, elements or an array
   // (or fragment) containing these types.
-  node: PropTypes.node,
+  nodeProp: PropTypes.node,
  
   // A React element.
-  element: PropTypes.element,
+  elementProp: PropTypes.element,
  
   // You can also declare that a prop is an instance of a class. This uses
   // JS's instanceof operator.
-  instance: PropTypes.instanceOf(Message),
+  instanceProp: PropTypes.instanceOf(Message),
  
   // You can ensure that your prop is limited to specific values by treating
   // it as an enum.
-  enum: PropTypes.oneOf(['News', 'Photos']),
+  enumProp: PropTypes.oneOf(['News', 'Photos']),
  
   // An object that could be one of many types
-  union: PropTypes.oneOfType([
+  unionProp: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.instanceOf(Message)
   ]),
  
   // An array of a certain type
-  arrayOf: PropTypes.arrayOf(PropTypes.number),
+  arrayOfProp: PropTypes.arrayOf(PropTypes.number),
  
   // An object with property values of a certain type
-  objectOf: PropTypes.objectOf(PropTypes.number),
+  objectOfProp: PropTypes.objectOf(PropTypes.number),
  
   // An object taking on a particular shape
-  objectShape: PropTypes.shape({
+  objectShapeProp: PropTypes.shape({
     color: PropTypes.string,
     fontSize: PropTypes.number
   }),
  
   // A value of any data type
-  any: PropTypes.any.isRequired,
+  anyProp: PropTypes.any.isRequired,
 
   // You can chain any of the above with `isRequired` to make sure a warning
   // is shown if the prop isn't provided.
-  required: PropTypes.string.isRequired,
+  requiredProp: PropTypes.string.isRequired,
 
   // You can also specify a custom validator. It should return an Error
   // object if the validation fails. Don't `console.warn` or throw, as this
   // won't work inside `oneOfType`.
-  custom: function(props, propName, componentName) {
+  customProp: function(props, propName, componentName) {
     if (/matchme/.test(props[propName])) {
       return new Error(
         'Invalid prop `' + propName + '` supplied to' +
@@ -69,7 +69,7 @@ const propTypes = {
   // will be called for each key in the array or object. The first two
   // arguments of the validator are the array or object itself, and the
   // current item's key.
-  customArrayOf: PropTypes.arrayOf(function(propValue, key, componentName, location, propFullName) {
+  customArrayOfProp: PropTypes.arrayOf(function(propValue, key, componentName, location, propFullName) {
     if (/matchme/.test(propValue[key])) {
       return new Error(
         'Invalid prop `' + propFullName + '` supplied to' +
@@ -84,25 +84,25 @@ class TypedComponent extends Component {
     const props = this.props;
     return (
       <ul>
-        <li>Array:    {props.array.toString()}</li>
-        <li>Bool:     {props.bool.toString()}</li>
-        <li>Function: {props.func.toString()}</li>
-        <li>Number:   {props.number.toString()}</li>
-        <li>Object:   {props.object.toString()}</li>
-        <li>String:   {props.string.toString()}</li>
-        <li>Symbol:   {props.symbol.toString()}</li>
-        <li>Node:     {props.node.toString()}</li>
-        <li>Element:  {props.element.toString()}</li>
-        <li>Instance: {props.instance.toString()}</li>
-        <li>Enum:     {props.enum.toString()}</li>
-        <li>Union:    {props.union.toString()}</li>
-        <li>arrayOf:  {props.arrayOf.toString()}</li>
-        <li>objOf:    {props.objectOf.toString()}</li>
-        <li>objShape: {props.objectShape.toString()}</li>
-        <li>Any:      {props.any.toString()}</li>
-        <li>Required: {props.required ? props.required.toString() : '(not in props)'}</li>
-        <li>Custom:   {props.custom.toString()}</li>
-        <li>customArrayOf: {props.customArrayOf.toString()}</li>
+        <li>Array:    {props.arrayProp.toString()}</li>
+        <li>Bool:     {props.boolProp.toString()}</li>
+        <li>Function: {props.funcProp.toString()}</li>
+        <li>Number:   {props.numberProp.toString()}</li>
+        <li>Object:   {props.objectProp.toString()}</li>
+        <li>String:   {props.stringProp.toString()}</li>
+        <li>Symbol:   {props.symbolProp.toString()}</li>
+        <li>Node:     {props.nodeProp.toString()}</li>
+        <li>Element:  {props.elementProp.toString()}</li>
+        <li>Instance: {props.instanceProp.toString()}</li>
+        <li>Enum:     {props.enumProp.toString()}</li>
+        <li>Union:    {props.unionProp.toString()}</li>
+        <li>arrayOf:  {props.arrayOfProp.toString()}</li>
+        <li>objOf:    {props.objectOfProp.toString()}</li>
+        <li>objShape: {props.objectShapeProp.toString()}</li>
+        <li>Any:      {props.anyProp.toString()}</li>
+        <li>Required: {props.requiredProp ? props.requiredProp.toString() : '(not in props)'}</li>
+        <li>Custom:   {props.customProp.toString()}</li>
+        <li>customArrayOf: {props.customArrayOfProp.toString()}</li>
       </ul>
     );
   }
