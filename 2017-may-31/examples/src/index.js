@@ -51,7 +51,7 @@ const invalidProps = {
 
 ReactDOM.render(
   <TypedComponent
-    {...invalidProps}
+    {...validProps}
   />,
   document.getElementById('container')
 );

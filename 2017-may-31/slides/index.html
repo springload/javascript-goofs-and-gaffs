@@ -26,10 +26,7 @@
 				top:0px;
 				right:0px;
 				padding: .2rem .9rem;
-				background: rgba(255,255,255, 0.3);
-				border-style: dashed;
-				border-width: 2px;
-				border-color: #ccc;
+				background: rgba(255,255,255, 0.7);
 				border-radius: 2rem 0.7rem;
 			}
 
@@ -49,36 +46,31 @@
 																	<use xlink:href="#springload" />
 															</svg>
 
+<section data-background="wakeup.png" data-background-size="contain"></section>
+
+
 <section>
 	<h1>PropTypes<br>
 	 <i style="color:lightpink ; text-decoration: none; font-family: 'comic sans ms' ; text-shadow:.1rem .1rem 1rem black; transform: scale(2.2); display: inline-block">2</i>
 	 <br>
 	 FlowType
 	</h1>
-	<h5>
+		<h5>
 		@<a href="http://twitter.com/hollowaynz" class="twitterHandle">HollowayNZ</a>
 	</h5>
 </section>
 
-<!-- <section data-background="wakeup.png" data-background-size="contain"></section> -->
-
-<section data-background="whoami.jpg" data-background-size="contain">
-	<div style="margin-left:40%;margin-top:20%; text-align:left">
+<section>
+	<div>
 		<img src="netscape2.gif">
+		<img src="http://i.imgur.com/RukIsDo.jpg" width="200">
+		<img src="http://holloway.nz/family.jpg" width="250">
 	</div>
 </section>
 
-<section>
-		<h1>React 15.5.0</h1>
-		<p>
-			<img src="bye.png" alt="'Bye' Emoji" style="width: 10rem; vertical-align:middle; border: none; background:none; box-shadow:none">
-			<b>PropTypes</b>
-
-		<br>
-			 deprecated &amp; moved to <tt>'prop-types'</tt>
-		</p>
-</section>
-
+<!-- 
+<section data-background="http://holloway.nz/family.jpg" data-background-size="contain"></section>
+-->
 
 <section>
 		<h1>React 15.5.0</h1>
@@ -91,11 +83,36 @@
 		</p>
 </section>
 
+
 <section>
+	<h2>Before</h2>
 	<pre><code data-trim data-noescape>import { PropTypes } from 'react';</code></pre>
+	<h2>After</h2>
+	
 	<pre><code data-trim data-noescape>import PropTypes from 'prop-types';</code></pre>
-  <pre style="position:absolute;width:100vw;left:-10%"><code data-trim data-noescape style="display:inline-block">jscodeshift -t react-codemod/transforms/React-PropTypes-to-prop-types.js &lt;path&gt;</code></pre>
 </section>
+
+<section>
+<pre style="position:absolute;width:100vw;left:-10%;box-shadow:none"><code data-trim data-noescape style="display:inline-block">jscodeshift -t react-codemod/transforms/React-PropTypes-to-prop-types.js &lt;path&gt;</code>
+</pre></section>
+
+	
+
+<section data-background="http://i.imgur.com/eGjV0x7.png">
+<h1 style="opacity:1;text-shadow: 0px 0px 15px black, 0px 0px 5px black;">Why Types?</h1>
+</section>
+
+<!--
+<section data-background="react-europe.png" data-background-size="contain">
+	
+Dominick Gannaway
+	https://www.youtube.com/watch?v=djOc1EK07Tk
+	 https://www.youtube.com/channel/UCorlLn2oZfgOJ-FUcF2eZ1A
+ 
+
+</section>
+-->
+
 
 <!-- 
 <section class="left">
@@ -134,12 +151,6 @@
 <section data-background-image="jigsaw.svg" data-background-size="contain"></section>
 
 <section>
-	<h1>Flow<br>
-		 <i style="color:lightpink ; text-decoration: none; font-family: 'comic sans ms' ; text-shadow:.1rem .1rem 1rem black; transform: scale(1); display: inline-block">or</i><br>
- TypeScript</h1>
-</section>
-
-<section>
 <pre><code data-trim data-noescape>
 class MyComp extends Component {
   render() { return &lt;h1&gt;{this.props.title}&lt;/h1&gt;}
@@ -149,7 +160,6 @@ MyComp.propTypes = {
 }
 </code></pre>
 </section>
-
 
 <section>
 <pre><code data-trim data-noescape>
@@ -165,11 +175,32 @@ class MyComp extends Component {
 
 <section>
 <pre><code data-trim data-noescape>
+// @flow
+class MyComp extends Component {
+  props: {
+    visible: boolean,
+  }
+  render() { return &lt;h1&gt;&lt;/h1&gt;}
+}
+</code></pre>
+</section>
+
+<section>
+<pre><code data-trim data-noescape>
+const subtract = (x, y) => ( x - y );
+
+subtract( 1, getY() );
+</code></pre>
+</section>
+
+<section>
+<pre><code data-trim data-noescape>
 const subtract = (x: number, y: number) => ( x - y );
 
 subtract( 1, getY() );
 </code></pre>
 </section>
+
 
 <section >
 	<p>String<br> Array<br> Number<br> Object<br> Function<br>...</p>
@@ -180,8 +211,13 @@ subtract( 1, getY() );
 </section>
 
 <section>
-	<h1>CodeMod</h1>
-	<p>(don't)</p>
+	<h1>Final thoughts</h1>
+	<p>CodeMod (just don't)</p>
+	<p>TypeScript</p>
+</section>
+
+<section>
+	<h1>Questions?</h1>
 </section>
 
 			</div>
