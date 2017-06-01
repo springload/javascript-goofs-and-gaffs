@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TypedComponent from './component.proptypes';
-// import TypedComponent from './component.flowtype';
+// import TypedComponent from './component.proptypes';
+import TypedComponent from './component.flowtype';
 import Message from './classes/message';
 
 const validProps = {
@@ -51,7 +51,7 @@ const invalidProps = {
 
 ReactDOM.render(
   <TypedComponent
-    {...validProps}
+    {...invalidProps}
   />,
   document.getElementById('container')
 );
