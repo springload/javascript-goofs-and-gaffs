@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<style>
+		.reveal caption {
+			font-size: small;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>Data</section>
+			<section>
+				<p>sdfsdf</p>
+				<p class="fragment">things</p>
+				<table>
+					<caption>Users</caption>
+					<colgroup>
+						<col class="">
+						<col class="fragment">
+					</colgroup>
+
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<th>Amy</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<th>Matt</td>
+					</tr>
+				</table>
+
+			</section>
+
+			<section>
+				<p>sdfsdf</p>
+				<p class="fragment">things</p>
+				<table>
+					<caption>Users</caption>
+					<colgroup>
+						<col class="">
+						<col class="fragment">
+					</colgroup>
+
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<th>Amy</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<th>Matt</td>
+					</tr>
+				</table>
+
+			</section>
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+
+		function displayColumn(colElement, show) {
+			if (colElement.nodeName.toLowerCase() !== "col") return;
+			var columnIndex = -1;
+			while (colElement.previousSibling) {
+				colElement = colElement.previousSibling;
+				columnIndex++;
+			}
+			var rows = colElement.parentNode.parentNode.querySelectorAll('tr');
+			rows.forEach(row => {
+				var cells = row.querySelectorAll('th, td');
+				cells.forEach((cell, index) => {
+					if (index === columnIndex - 1) {
+						cell.style.display = show ? 'table-cell' : 'none'
+					}
+				})
+			})
+
+		}
+
+		Reveal.addEventListener('fragmentshown', function (event) {
+			displayColumn(event.fragment, true);
+		});
+
+		Reveal.addEventListener('fragmenthidden', function (event) {
+			displayColumn(event.fragment, false);
+		});
+
+
+		document.body.querySelectorAll('col.fragment').forEach(colElement => {
+			displayColumn(colElement, false);
+		})
+
+	</script>
+</body>
+
+</html>
