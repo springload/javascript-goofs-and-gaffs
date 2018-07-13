@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>reveal.js</title>
+	<title>React Patterns: Normalizing React/Redux Data</title>
 
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/black.css">
@@ -22,8 +22,126 @@
 		document.getElementsByTagName('head')[0].appendChild(link);
 	</script>
 	<style>
-		.reveal caption {
-			font-size: small;
+		.reveal .datatable {
+			border: solid 0.1rem #ccc;
+			border-radius: .3rem;
+			background: rgba(0, 0, 0, 0.5)
+		}
+
+		.reveal .datatable.small th,
+		.reveal .datatable.small td {
+			font-size: 2rem;
+		}
+
+		.reveal .datatable+.datatable {
+			margin-top: 1rem;
+		}
+
+		.reveal .datatable caption {
+			font-size: 1.6rem;
+			position: absolute;
+			padding: 0 0.7rem;
+			font-style: italic;
+			border-bottom-right-radius: .3rem;
+			box-shadow: 2px 2px 2px white;
+		}
+
+		.reveal .datatable tr:first-child th,
+		.reveal .datatable tr:first-child td {
+			padding-top: 2rem;
+		}
+
+		.reveal .datatable th {
+			font-size: 2rem;
+		}
+
+		.reveal abbr {
+			border: none;
+			outline: none;
+			text-decoration: none;
+		}
+
+		.reveal .primary-key {
+			display: inline-block;
+			border: dotted 2px #999;
+			border-radius: 100%;
+			min-width: 2.5rem;
+			min-height: 2.5rem;
+			font-size: 2rem;
+			text-align: center;
+			background: rgba(0, 0, 0, 0.2)
+		}
+
+		.reveal h1,
+		.reveal h2,
+		.reveal h3,
+		.reveal p {
+			text-transform: capitalize;
+			font-weight: 100;
+			font-family: Courier, 'Courier New', monospace;
+			text-shadow: 2px 2px 1px black;
+		}
+
+		.reveal .text-shadow {
+			text-shadow: 2px 2px 1px black, 0px 0px 3px black;
+		}
+
+		.reveal h1 .small-print,
+		.reveal h2 .small-print,
+		.reveal h3 .small-print {
+			display: block;
+			font-size: 2rem;
+		}
+
+		.reveal h2+.versus+h2 {
+			margin-top: 1rem;
+		}
+
+		.reveal .versus {
+			font-style: italic;
+			color: rgba(255, 255, 255, 0.2)
+		}
+
+		.reveal .hljs {
+			padding: 1rem;
+			border-radius: 1rem;
+			background: rgba(0, 0, 0, 0.7);
+			white-space: pre-wrap;
+			font-size: 2rem;
+			text-align: left;
+		}
+
+		.reveal .hljs+.hljs {
+			margin-top: 1rem;
+		}
+
+		.reveal .category {
+			font-size: 3rem;
+		}
+
+		.hljs.medium {
+			font-size: 1.5rem;
+		}
+
+		.hljs.small {
+			font-size: 1rem;
+		}
+
+		.reveal td.ta-center {
+			text-align: center;
+		}
+
+		.reveal .u-quote {
+			font-size: 5rem;
+			font-family: serif;
+		}
+
+		.reveal .u-quote-r {
+			font-size: 5rem;
+			font-family: serif;
+			float: right;
+			position: relative;
+			top: -50px;
 		}
 	</style>
 </head>
@@ -31,58 +149,391 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
-			<section>Data</section>
-			<section>
-				<p>sdfsdf</p>
-				<p class="fragment">things</p>
-				<table>
+			<section data-background="ibm.jpg">
+
+			</section>
+			<section data-background="ibm-blurry.jpg">
+				<h1>
+					<span class="category">React Patterns:
+						<br>
+					</span>
+					<em>Normalizing React/Redux Data</em>
+				</h1>
+			</section>
+			<section data-background="ibm-blurry.jpg">
+				<h1 class="category">1960s Database</h1>
+				<table class="datatable small">
 					<caption>Users</caption>
 					<colgroup>
-						<col class="">
+						<col>
+						<col>
+						<col class="fragment">
+						<col class="fragment">
+						<col class="fragment">
 						<col class="fragment">
 					</colgroup>
-
 					<tr>
 						<th>Id</th>
 						<th>Name</th>
+						<th>Town</th>
+						<th>Population</th>
+						<th>ClubName</th>
+						<th>ClubTown</th>
 					</tr>
 					<tr>
 						<td>1</td>
-						<th>Amy</td>
+						<td>Matthew
+							<em>'Matt'</em> Holloway</td>
+						<td>Wellington</td>
+						<td>15 people</td>
+						<td>MMM</td>
+						<td>Auckland</td>
 					</tr>
 					<tr>
 						<td>2</td>
-						<th>Matt</td>
+						<td>Stella</td>
+						<td>Wellington</td>
+						<td>15 people</td>
 					</tr>
 				</table>
-
 			</section>
 
-			<section>
-				<p>sdfsdf</p>
-				<p class="fragment">things</p>
-				<table>
+			<section data-background="ibm-blurry.jpg">
+				<table class="datatable small">
 					<caption>Users</caption>
-					<colgroup>
-						<col class="">
-						<col class="fragment">
-					</colgroup>
-
 					<tr>
 						<th>Id</th>
 						<th>Name</th>
+						<th>TownId</th>
+						<th>ClubId</th>
 					</tr>
 					<tr>
 						<td>1</td>
-						<th>Amy</td>
+						<td>Matthew
+							<em>'Matt'</em> Holloway</td>
+						<td class="ta-center">
+							<span class="primary-key">1</span>
+						</td>
+						<td>
+							<span class="primary-key">1</span>
+						</td>
 					</tr>
 					<tr>
 						<td>2</td>
-						<th>Matt</td>
+						<td>Stella</td>
+						<td class="ta-center">
+							<span class="primary-key">1</span>
+						</td>
 					</tr>
 				</table>
 
+				<table class="datatable">
+					<caption>Towns</caption>
+					<tr>
+						<th>TownId</th>
+						<th>Name</th>
+						<th>Population</th>
+					</tr>
+					<tr>
+						<td class="ta-center">
+							<span class="primary-key">1</span>
+						</td>
+						<td>Wellington</td>
+						<td>15 people</td>
+					</tr>
+					<tr>
+						<td class="ta-center">
+							<span class="primary-key">2</span>
+						</td>
+						<td>Auckland</td>
+						<td>16 people</td>
+					</tr>
+				</table>
+
+
+				<table class="datatable">
+					<caption>Clubs</caption>
+					<tr>
+						<th>ClubId</th>
+						<th>Name</th>
+						<th>TownId</th>
+					</tr>
+					<tr>
+						<td class="ta-center">
+							<span class="primary-key">1</span>
+						</td>
+						<td>MMM</td>
+						<td>
+							<span class="primary-key">2</span>
+						</td>
+					</tr>
+				</table>
 			</section>
+
+			<section data-background="ibm-blurry.jpg">
+				<h1>Denormalized
+					<span class="small-print">(fewer tables, more repetition)</span>
+				</h1>
+				<abbr class="versus">versus</abbr>
+				<h1>Normalized
+					<span class="small-print">
+						(more tables, fewer repeats)
+					</span>
+				</h1>
+			</section>
+
+			<section data-background="redux.jpg">
+
+			</section>
+
+			<section data-background="redux-blurry.jpg">
+				<code class="hljs small">{
+  users: [ {
+      id: 1,
+      name: 'Matthew <em>"Matt"</em> Holloway',
+      town: 'Wellington',
+      population: '15 People',
+      clubName: 'MMM',
+      clubTown: 'Auckland'
+    }, {
+      id: 2,
+      name: 'Stella',
+      town: 'Wellington',
+      population: '15 People',
+    } ]
+}</code>
+			</section>
+
+			<section data-background="redux-blurry.jpg">
+				<code class="hljs small">const selectUsers = state => state.users</code>
+
+				<code class="hljs small">const selectUser = (state, id) => state.users.find(user => user.id === id)</code>
+
+			</section>
+			<section data-background="redux-blurry.jpg">
+				<code class="hljs small">const updateTown = (previousState, action) => ({
+    ...previousState,
+    users: previousState.users.map(previousUser => {
+      if (previousUser.townName !== action.payload.previousTownName) {
+        return previousUser;
+      }
+      return {
+        ...previousUser,
+        townName: action.payload.newTownName,
+        population: action.payload.newPopulation
+      };
+    }),
+    clubs: previousState.clubs.map(previousClub => {
+      if (previousUser.clubTown !== action.payload.previousTownName) {
+        return previousClub;
+      }
+      return {
+        ...previousClub,
+        clubTown: action.payload.newTownName
+      };
+    }
+  })
+  </code>
+			</section>
+			<section data-background="redux-blurry.jpg">
+				<h2>Denormalized</h2>
+				<p>Easy to select.
+					<br> Hard to update.
+					<br> Easy to introduce bugs.
+				</p>
+			</section>
+
+
+			<section data-background="redux-blurry.jpg" class="text-shadow">
+				<span class="u-quote">&ldquo;</span>Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical
+				parts of their programs, and these attempts at efficiency actually have a strong negative impact when debugging and maintenance
+				are considered. We should forget about small efficiencies, say about 97% of the time:
+				<br>
+				<b style="font-size:larger">
+					<i>premature optimization is the root of all evil.</i>
+				</b>
+				<br>Yet we should not pass up our opportunities in that critical 3%.
+				<br>
+				<span class="u-quote-r">&rdquo;</span>
+				<i>- Don Knuth</i>
+			</section>
+
+
+
+
+			<section data-background="redux-blurry.jpg">
+				<h1>Normalized</h1>
+				<code class="hljs small">{
+  users: {
+    1: {
+      name: 'Matthew <em>"Matt"</em> Holloway',
+      townId: 1,
+      club: 1 
+    },
+    2: {
+      name: 'Stella',
+      townId: 1
+    }
+  },
+  towns: {
+    1: { name: 'Wellington', population: '15 People' }
+  },
+  clubs: {
+    1: { name: 'MMM', townId: 1 }
+  },
+  userView: [1, 2]
+}</code>
+			</section>
+			<section data-background="redux-blurry.jpg">
+				<code class="hljs small">const selectUsers = state => state.userView.map(
+  userId => selectUser(state, userId)
+)
+</code>
+				<code class="hljs small fragment">const selectUser = (state, userId) => {
+  const user = state.users[userId];
+  return {
+    ...user,
+    town: selectTown(state, user.townId)
+  }
+};
+</code>
+				<code class="hljs small fragment">const selectTown = (state, townId) => state.towns[townId];
+</code>
+				<code class="hljs small fragment">const updateTown = (previousState, action) => ({
+  ...previousState,
+  towns: {
+    ...previousState.towns,
+    [action.payload.newTown.id]: action.payload.newTown,
+  }
+})
+</code>
+			</section>
+
+			<section data-background="redux-blurry.jpg">
+				<code class="hljs small">const mapStateToProps = state => state.userView;
+
+const HomePage = ({ userIds }) => (
+  &lt;div&gt;
+    {userIds.map(userId => &lt;User id={userId} /&gt; )}
+  &lt;/div&gt;
+)
+</code>
+				<code class="hljs small fragment">const mapStateToProps = (state, ownProps) => state.users[ownProps.id];
+
+const UserComponent = ({ name, townId, clubId }) => (
+  &lt;div&gt;
+    {name}
+    &lt;Town id={townId} /&gt;
+    {clubId && &lt;Club id={clubId} /&gt;
+  &lt;/div&gt;;
+)
+</code>
+				<code class="hljs small fragment">const mapStateToProps = (state, ownProps) => state.towns[ownProps.id];
+
+const TownComponent = ({ name }) => (
+  &lt;div&gt; {name} &lt;/div&gt;;
+)</code>
+			</section>
+
+			<section data-background="redux-blurry.jpg">
+				<a href="https://www.npmjs.com/package/reselect">ReSelect</a>
+			</section>
+
+			<section data-background="redux.jpg">
+				<h1>Normalizing Denormalized Responses</h1>
+			</section>
+
+			<section data-background="redux-blurry.jpg">
+
+				<code class="hljs small">{ users: [ {
+	id: 1,
+	name: 'Matthew "Matt" Holloway',
+	town: {
+		id: 1,
+		name: 'Wellington',
+		population: '15 People',
+	},
+	club: {
+		id: 1,
+		name: 'MMM',
+		townId: 2,
+		population: '16 People'
+	}
+  }, {
+	id: 2,
+	name: 'Stella',
+	town: {
+		townId: 1,
+		name: 'Wellington',
+		population: '15 People',
+  }
+]}</code>
+			</section>
+			<section data-background="redux-blurry.jpg">
+				<code class="hljs small">
+const userViewReducer = (previousState, action) => {
+	if (action.type === NEW_DATA) {
+		return action.payload.users.map(user => 
+			user.id
+		)
+	}
+	return previouState;	
+}
+</code>
+			</section>
+			<section data-background="redux-blurry.jpg">
+				<code class="hljs small">
+const userReducer = (previousState, action) => {
+	if(action.type === NEW_DATA) {
+		return {
+			...previouState,
+			...action.payload.users.reduce((users, user) => {
+				users[user.id] = {
+					id: user.id,
+					name: user.name,
+				}
+				return towns;
+			}, {})
+		}
+	}
+	return previouState;	
+}
+</code>
+			</section>
+			<section data-background="redux-blurry.jpg">
+				<code class="hljs small">
+const townReducer = (previousState, action) => {
+	if(action.type === NEW_DATA) {
+		return {
+			...previouState,
+			...action.payload.users.reduce((towns, user) => {
+				towns[user.town.id] = user.town;
+				return towns;
+			}, {})
+		}
+	}
+	return previouState;	
+}
+</code>
+			</section>
+			<section data-background="redux-blurry.jpg">
+				<code class="hljs small">
+const clubReducer = (previousState, action) => {
+	if(action.type === NEW_DATA) {
+		return {
+			...previouState,
+			...users.reduce((clubs, user) => {
+				clubs[user.club.id] = user.club;
+				return clubs;
+			}, {})
+		}
+	}
+	return previouState;
+}
+</code>
+			</section>
+
+
 		</div>
 	</div>
 
@@ -99,17 +550,27 @@
 				{ src: 'plugin/markdown/marked.js' },
 				{ src: 'plugin/markdown/markdown.js' },
 				{ src: 'plugin/notes/notes.js', async: true },
-				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+				{
+					src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+						hljs.configure({
+							language: 'javascript'
+						})
+						hljs.initHighlightingOnLoad();
+					}
+				}
 			]
 		});
 
 		function displayColumn(colElement, show) {
 			if (colElement.nodeName.toLowerCase() !== "col") return;
-			var columnIndex = -1;
+			var columnIndex = 1;
 			while (colElement.previousSibling) {
 				colElement = colElement.previousSibling;
-				columnIndex++;
+				if (colElement.nodeType === Node.ELEMENT_NODE) {
+					columnIndex++;
+				}
 			}
+
 			var rows = colElement.parentNode.parentNode.querySelectorAll('tr');
 			rows.forEach(row => {
 				var cells = row.querySelectorAll('th, td');
@@ -130,10 +591,14 @@
 			displayColumn(event.fragment, false);
 		});
 
+		Reveal.addEventListener('ready', function (event) {
+			document.body.querySelectorAll('.reveal section').forEach((section, sectionIndex) => {
+				section.querySelectorAll('col.fragment').forEach(colElement => {
+					displayColumn(colElement, sectionIndex < event.indexh);
+				})
+			})
+		});
 
-		document.body.querySelectorAll('col.fragment').forEach(colElement => {
-			displayColumn(colElement, false);
-		})
 
 	</script>
 </body>
