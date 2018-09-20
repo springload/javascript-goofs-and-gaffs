@@ -1,0 +1,227 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Problem Modelling Techniques</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<style>
+		.reveal pre.card,
+		.card {
+			background: yellow url("http://i.imgur.com/wJOEjXc.jpg") center center;
+			color: black;
+			padding: 1em 1em 1em 3em;
+			min-height: 4em;
+			min-width: 15em;
+			border: dotted 2px #222;
+			border-radius: 10px;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background="http://i.imgur.com/gw8KB3W.jpg"></section>
+
+			<section data-background="ibm7094console.jpg" data-background-size="contain">
+
+			</section>
+
+			<section data-background="hidden-figures.jpeg" data-background-size="contain">
+
+			</section>
+
+
+			<section>
+
+				<pre class="card">
+10 PRINT "What is your name?"
+20 k$ = INKEY$
+30 PRINT k$
+40 LET total = 0
+50 FOR counter = 0 TO 99
+60     total = total + counter
+70 NEXT counter
+80 PRINT total
+</pre>
+
+				<pre class="card">
+25 PRINT "Hello"
+</pre>
+			</section>
+
+			<section>
+				<h2> Testing?</h2>
+
+				<hr/>
+
+				<h2>Re-use?</h2>
+			</section>
+
+
+			<section>
+				<h2>Modelling Techniques</h2>
+				<p>
+					Object Oriented / Functional / Data-centric / Aspect Oriented...
+				</p>
+			</section>
+
+			<section>
+				<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/aKLntZcp27M" frameborder="0" allow="autoplay; encrypted-media"
+				 allowfullscreen></iframe>
+			</section>
+
+			<section>
+				<h1>Functional Programming</h1>
+				<p>"Pure Functions"</p>
+				<p>"No Side Effects"</p>
+				<p>
+					Immutable and Stateless.</p>
+				<p>
+					"Currying"</p>
+				</pre>
+			</section>
+
+			<section data-background="https://i.imgur.com/X2wktGe.jpg"></section>
+
+			<section data-background="google-image-search.png"></section>
+
+
+			<section>
+				<pre>
+	function consoleLog(message){
+		console.log(message);
+	}
+	
+	consoleLog('Harold and Maude (1971)');
+	</pre>
+
+			</section>
+			<section>
+				<pre>
+function consoleLog(message){
+	console.log(message);
+}
+
+consoleLog('Harold and Maude (1971)');
+</pre>
+
+			</section>
+			<section>
+				<pre>
+function consoleLog(message){
+	console.log(message);
+}
+
+function wrapper(fn, argument1){
+	fn(argument1);
+}
+
+wrapper(consoleLog, 'Mandy (2018)');
+</pre>
+			</section>
+			<section>
+				<pre>
+function consoleLog(){
+	console.log(...arguments);
+}
+
+consoleLog('Turbo Kid (2015) );
+</pre>
+			</section>
+			<section>
+				<pre>
+function consoleLogWithThis(message){
+	console.log(this, message);
+}
+
+consoleLog.call(
+	'A movie',
+	'Bloodsucking Pharoahs In Pittsburgh (1991)'
+);
+</pre>
+			</section>
+			<section>
+				<pre>
+function consoleLogWithThis(message){
+	console.log(this, message);
+}
+
+consoleLog.apply(
+	'A movie',
+	['World\'s Greatest Dad (2009)']
+);
+	</pre>
+			</section>
+			<section>
+				<pre>
+	function consoleLogWithThis(message){
+		console.log(this, message);
+	}
+	
+const movieBindedFunction = consoleLog.bind('A movie');
+
+movieBindedFunction(
+	'World\'s Greatest Dad (2009)'
+);
+</pre>
+			</section>
+			<section>
+				<pre>
+function consoleLogWithThis(message1, message2){
+	console.log(this, message1, message2);
+}
+	
+const dadMovieBindedFunction = consoleLog
+  .bind(
+	'A movie',
+	'World\'s Greatest Dad (2009)'
+  );
+
+dadMovieBindedFunction('Hi Message2 I'm Dad);
+</pre>
+			</section>
+
+
+
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{src: 'plugin/markdown/marked.js'},
+				{src: 'plugin/markdown/markdown.js'},
+				{src: 'plugin/notes/notes.js', async: true},
+				{src: 'plugin/highlight/highlight.js', async: true, callback: function () {hljs.initHighlightingOnLoad();}}
+			]
+		});
+	</script>
+</body>
+
+</html>
