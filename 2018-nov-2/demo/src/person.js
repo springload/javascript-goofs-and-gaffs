@@ -1,7 +1,7 @@
 import React from "react";
 import PersonPNG from "./person.png";
 
-export default ({ opacity, transform, style }) => {
+export default ({ opacity, transform, style, count }) => {
   return (
     <div
       style={{

@@ -8,8 +8,7 @@ export default () => {
 
   const items = Array.from(Array(total)).map((x, i) => ({
     opacity: i < count ? 1 : 0.5,
-    key: i,
-    number: i + 1
+    key: i
   }));
 
   return (

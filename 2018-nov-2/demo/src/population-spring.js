@@ -12,5 +12,7 @@ export default ({ items }) =>
     />
   ));
 
-//  transform: `translateX(${-item.opacity * 50}px)`
-// { tension: 180, friction: 12 }; // wobbly spring
+// Step 1: Add this to the `to` object,
+//     transform: `translateX(${-item.opacity * 50}px)`
+// Step 2: config <Spring> to make it wobbly!
+//     config = {{ tension: 180, friction: 12 }};
