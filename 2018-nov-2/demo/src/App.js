@@ -1,5 +1,7 @@
 import React, { useState, Fragment } from "react";
 import Population from "./population";
+// import Population from "./population-spring";
+// import Population from "./population-trail";
 
 const total = 10;
 
