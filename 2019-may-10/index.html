@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Copyright, Licences and Law</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/black.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>
+            Copyright,<br />
+            licences,<br />
+            and law
+          </h1>
+        </section>
+        <section>
+          <h1>
+            <abbr
+              title="Intellectual Property"
+              style="border:none;outline:none;text-decoration:none"
+              >IP</abbr
+            >?
+          </h1>
+        </section>
+        <section>
+          <ul style="list-style:none">
+            <li style="margin-bottom: 1em">Copyright: Life + 50</li>
+            <li style="margin-bottom: 1em">Patents: 20 years</li>
+            <li style="margin-bottom: 1em">Trademark: Perpetual</li>
+
+            <li>
+              Neighbouring rights,
+              <small
+                >industrial design,<small>
+                  trade secrets,<small> (and more)</small></small
+                ></small
+              >
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h1>Copyright</h1>
+          <aside class="notes">
+            You don't need to register (although you can get more money if you
+            do in the US). It's yours as soon as you take your pen off the
+            paper, It needs to be in a fixed form.. like paper or a recording,
+            it can't be just an idea. Statute of Anne 1710. Berne Convention
+            1886 (177 Countries). Universal Copyright Convention in 1952 and
+            1971. TRIPS (WTO) in 1990. WCT in 1996. Marrakesh VIP Treaty in 2013
+            Originally it covered printing presses, then art, then records, then
+            debates about radio... does If you're interested in early video and
+            audio technology then check out youtube channels
+            <a href="http://youtube.com/techmoan">TechMoan</a> and
+            <a href="https://youtube.com/technologyconnections"
+              >Technology Connections</a
+            >. Art, music, movies... but not recipes, or the look of fonts, but
+            the font files are copyright.
+            <a
+              href="https://alj.artrepreneur.com/mickey-mouse-keeps-changing-copyright-law/"
+              >Disney Steamboat Bill every time copyright expires they renew...
+              except for now</a
+            >
+          </aside>
+        </section>
+        <section>
+          <h1>Copyright</h1>
+          <p>Pen off the paper</p>
+          <p>International/Trade Agreements</p>
+        </section>
+
+        <section>
+          <h1 style="position:absolute;font-size:1.3rem; top: 2vh">
+            Pre-Digital Era
+          </h1>
+          <div
+            style="width:60vh;height:60vh;border-radius:100%; background-color: rgba(87, 189, 132, 0.5); display:flex;  align-items: center;
+			justify-content: center; margin: 0 auto"
+          >
+            All Possible Uses
+
+            <div
+              style="width:20vh;height:20vh;border-radius:100%; font-size:2rem; background-color: rgba(87, 189, 132, 0.5); display:flex;  align-items: center;
+			justify-content: center; position:absolute; top: 35vh; left:25%"
+            >
+              Fair Dealing
+            </div>
+
+            <div
+              style="width:25vh;height:25vh;border-radius:100%; background-color: rgba(87, 189, 132, 0.5); display:flex;  align-items: center;
+			justify-content: center; position: absolute; top: 5vh; left: 45%;"
+            >
+              Regulated Uses
+            </div>
+          </div>
+
+          <aside class="notes">
+            private study, research, criticism, review, and news reporting. but
+            not parody or satire... Australia introduced P&S in 2006.
+          </aside>
+        </section>
+
+        <section>
+          <h1 style="position:absolute;font-size:1.3rem; top: 2vh">
+            Digital Era
+          </h1>
+          <div
+            style="width:60vh;height:60vh;border-radius:100%; background-color: rgba(87, 189, 132, 0.5); display:flex;  align-items: center;
+				  justify-content: center; margin: 0 auto"
+          >
+            Regulated Uses
+
+            <div
+              style="width:15vh;height:15vh; font-size:2rem; border-radius:100%; background-color: rgba(87, 189, 132, 0.5); display:flex;  align-items: center;
+				  justify-content: center; position:absolute; top: 35vh; left:25%"
+            >
+              Fair Dealing
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 style="white-space: nowrap">
+            Licence === Contract
+          </h2>
+        </section>
+
+        <section>
+          <h2>
+            NPM package.json
+          </h2>
+          <p></p>
+          <code
+            style="background:  rgba(87, 189, 132, 1); padding: 0.5em; border-radius: 1em; text-shadow: 1px 1px 2px #000"
+          >
+            npx license-checker --summary
+          </code>
+          <aside class="notes">
+            SPDX <a href="https://spdx.org/licenses/">SPDX</a>
+          </aside>
+        </section>
+
+        <section>
+          <div
+            style="display:flex; flex-direction: row;flex-wrap: nowrap; border-radius: 1rem; border: solid 1px rgba(87, 189, 132, 1);"
+          >
+            <div
+              style="width:50%; border-right: solid 1px rgba(87, 189, 132, 1);"
+            >
+              Open Source <br />
+              Creative Commons
+            </div>
+            <div style="width:50%;">
+              Proprietary<br />
+              <i>"All Rights Reserved"</i>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h1>Open Source</h1>
+
+          <div
+            style="border-radius: 1rem; border: solid 1px rgba(87, 189, 132, 1);"
+          >
+            <div
+              style="width:50%; display:inline-block; border-right: solid 1px rgba(87, 189, 132, 1);"
+            >
+              BSD-style software
+            </div>
+            <div style="width:48%; display:inline-block">
+              GPL-style software
+            </div>
+            <div
+              style="width:100%; border-top: solid 1px rgba(87, 189, 132, 1);"
+            >
+              Creative Commons for content
+            </div>
+          </div>
+
+          <aside class="notes">
+            BSD from 1988. MIT from 1991. GPL from 1984. BSD and MIT both talk
+            about software, source, and binaries, so lawyers talk about not
+            using it for docs / video etc.
+          </aside>
+        </section>
+
+        <section>
+          <p>"Static" vs "Dynamic" Linking</p>
+
+          <p>"Distribution"</p>
+
+          <aside class="notes">
+            Linking def.<br />
+            Webpack analogy... operating system analogy loading software,
+            webpack analogy with code splitting,
+          </aside>
+        </section>
+
+        <section>
+          <div
+            style="display:flex; align-items: center;	justify-content: center; margin: 0 auto"
+          >
+            <div
+              style="width:30vh;height:30vh;border-radius:100%; background-color: rgba(87, 189, 132, 0.5); display:flex;  align-items: center;
+				  justify-content: center; margin: 0 auto; position:relative"
+            >
+              GPL
+
+              <div
+                style="width:10vh;height:10vh;border-radius:100%; font-size:2rem; background-color: rgba(87, 189, 132, 0.5); display:flex;  align-items: center;
+				  justify-content: center; position:absolute; top: 18vh; left:35%"
+              >
+                BSD
+              </div>
+            </div>
+
+            <div
+              style="width:30vh;height:30vh;border-radius:100%; border: solid 10px red; background-color: rgba(87, 189, 132, 0.5); display:flex;  align-items: center;
+				justify-content: center; margin: 0 auto; position:relative"
+            >
+              BSD
+
+              <div
+                style="width:10vh;height:10vh;border-radius:100%; font-size:2rem; background-color: rgba(87, 189, 132, 0.5); display:flex;  align-items: center;
+				justify-content: center; position:absolute; top: 18vh; left:35%"
+              >
+                GPL
+              </div>
+              <div
+                style="border-top:10px solid red; width: 30vh; position:absolute; transform: rotate(-45deg) "
+              ></div>
+            </div>
+          </div>
+          <aside class="notes"></aside>
+        </section>
+
+        <section>
+          Blending Open Source licences:
+          <a
+            href="http://www.softwarefreedom.org/resources/2007/gpl-non-gpl-collaboration.html"
+            >SFLC</a
+          >.<br /><br />
+          <a href="https://choosealicense.com/">ChooseALicense.com</a>
+        </section>
+
+        <section>
+          <h1>Terms</h1>
+          <p>
+            "Copyleft"<br />
+            "FLOSS", "FOSS", "OSS",<br />
+            "Copyright Holder"<br />
+            "Licence"<br />
+            "Contract"<br />
+            "Open Source"<br />
+            "Proprietary"<br />
+            "EULA"
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        hash: true,
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          { src: "plugin/highlight/highlight.js", async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
